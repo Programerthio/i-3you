@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question and Answer</title>
+    <style>
+        #answer-container {
+            display: none;
+        }
+        div{
+            margin-top: 20px;
+            gap : 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+<div id="question">ana-ana mau ngak kalau ada waktu ya semester 2 juga nga-apa apa kita jalan keluar?</div>
+<div id="answer-container">
+    <div id="answer">Ya,ngak apa apa!</div>
+</div>
+<div>
+    <button id="yesButton" onclick="showAnswer()">Ya</button>
+    <button id="noButton" onclick="moveNoButton()">Ngak</button>
+</div>
+
+
+<script>
+    function showAnswer() {
+        document.getElementById('answer-container').style.display = 'block';
+    }
+
+    function moveNoButton() {
+        var buttonNo = document.getElementById('noButton');
+        var newX = Math.random() * (window.innerWidth - buttonNo.clientWidth);
+        var newY = Math.random() * (window.innerHeight - buttonNo.clientHeight);
+        
+        buttonNo.style.position = 'absolute';
+        buttonNo.style.left = newX + 'px';
+        buttonNo.style.top = newY + 'px';
+    }
+</script>
+
+</body>
+</html>
